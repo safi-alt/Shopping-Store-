@@ -5,9 +5,12 @@ import Colors from "../constants/Colors";
 
 import ProductsOverviewScreen from "../screens/shop/ProductOverviewScreen";
 
+import ProductDetailScreen from "../screens/shop/ProductDetailScreen";
+
 const ProductsNavigator = createStackNavigator(
   {
     ProductsOverviewScreen: ProductsOverviewScreen,
+    ProductDetail: ProductDetailScreen,
   },
   {
     defaultNavigationOptions: {

@@ -11,11 +11,11 @@ import { Ionicons } from "@expo/vector-icons";
 const CartItem = (props) => {
   return (
     <View style={styles.cardItem}>
-      <View style={styles.itemData}>
+      <View style={styles.itemDataSlotOne}>
         <Text style={styles.quantity}>{props.quantity} </Text>
         <Text style={styles.mainText}>{props.title} </Text>
       </View>
-      <View style={styles.itemData}>
+      <View style={styles.itemDataSlotTwo}>
         <Text style={styles.mainText}>${props.amount.toFixed(2)}</Text>
         {props.deletable && (
           <TouchableOpacity
@@ -41,10 +41,18 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     marginHorizontal: 20,
+    width: "100%",
   },
-  itemData: {
+  itemDataSlotOne: {
     flexDirection: "row",
     alignItems: "center",
+    marginRight: 20,
+    width: "50%",
+  },
+  itemDataSlotTwo: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginRight: 20,
   },
   quantity: {
     fontFamily: "open-sans",
@@ -54,9 +62,10 @@ const styles = StyleSheet.create({
   mainText: {
     fontFamily: "open-sans-bold",
     fontSize: 16,
+    marginLeft: 10,
   },
   deleteButton: {
-    marginLeft: 20,
+    marginLeft: 10,
   },
 });
 

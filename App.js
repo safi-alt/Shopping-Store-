@@ -15,6 +15,11 @@ import ShopNavigator from "./navigation/shopNavigator";
 
 import { composeWithDevTools } from "redux-devtools-extension";
 
+import { LogBox } from "react-native";
+
+// To hide useless warnings
+LogBox.ignoreLogs(["Warning: ..."]);
+
 const rootReducer = combineReducers({
   products: productsReducer,
   cart: cartReducer,

@@ -32,10 +32,12 @@ export const signup = (email, password) => {
     }
 
     const resData = await response.json();
-    console.log(resData);
+    //console.log(resData);
 
     dispatch({
       type: SIGNUP,
+      token: resData.idToken,
+      userId: resData.localId,
     });
   };
 };
@@ -76,6 +78,8 @@ export const login = (email, password) => {
 
     dispatch({
       type: LOGIN,
+      token: resData.idToken,
+      userId: resData.localId,
     });
   };
 };
